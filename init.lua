@@ -4794,5 +4794,74 @@ vim.filetype.add({
 })
 
 -- ============================================================================
+-- CONFIGURATION LIST COMMAND
+-- ============================================================================
+-- Command to list all configurations currently loaded in this init.lua file
+
+vim.api.nvim_create_user_command('ListConfigurations', function()
+    local configs = {
+        core = {
+            { name = "VIM OPTIONS", line = 7, desc = "Core Vim/Neovim options and settings" },
+            { name = "KEYMAPS", line = 82, desc = "Custom keybindings and shortcuts" },
+            { name = "AUTOCOMMANDS", line = 181, desc = "Automatic commands and event handlers" },
+            { name = "UTILITY FUNCTIONS", line = 383, desc = "Helper functions (utils, toggle_go_test, etc.)" },
+            { name = "MASON VERIFICATION", line = 481, desc = "Mason tool verification utilities" },
+            { name = "HEALTH CHECK", line = 613, desc = "Comprehensive health check for configuration" },
+            { name = "MASON PATH INITIALIZATION", line = 708, desc = "Early Mason PATH setup" },
+            { name = "STATUSLINE SETUP", line = 783, desc = "Custom statusline configuration" },
+            { name = "LSP CONFIGURATION", line = 915, desc = "Language Server Protocol setup" },
+            { name = "LSP SERVER CONFIGURATIONS", line = 1330, desc = "Individual LSP server settings" },
+            { name = "FILETYPE PLUGINS", line = 4775, desc = "Filetype-specific settings" },
+        },
+        lsp_servers = {
+            "lua-ls", "gopls", "zls", "ts-ls", "rust-analyzer", 
+            "intelephense", "tailwindcss", "html-ls", "css-ls", "vue-ls"
+        },
+        formatters = {
+            "stylua", "prettier", "goimports", "gofmt", "black", 
+            "isort", "shfmt", "pint", "rustfmt"
+        },
+        linters = {
+            "golangci-lint", "eslint_d", "luacheck", "shellcheck", "pint"
+        },
+        plugins_count = 52,
+        treesitter_parsers = 30,
+    }
+
+    print("═══════════════════════════════════════════════════════════════")
+    print("         NEOVIM CONFIGURATION - QUICK OVERVIEW")
+    print("═══════════════════════════════════════════════════════════════")
+    print()
+    
+    print("📋 CORE CONFIGURATIONS (" .. #configs.core .. "):")
+    for i, config in ipairs(configs.core) do
+        print(string.format("%2d. %-35s (Line %4d)", i, config.name, config.line))
+        print(string.format("    └─ %s", config.desc))
+    end
+    print()
+    
+    print("󰒋 LSP SERVERS (" .. #configs.lsp_servers .. " configured):")
+    print("    " .. table.concat(configs.lsp_servers, ", "))
+    print()
+    
+    print("󰉿 FORMATTERS (" .. #configs.formatters .. " configured):")
+    print("    " .. table.concat(configs.formatters, ", "))
+    print()
+    
+    print("󰁨 LINTERS (" .. #configs.linters .. " configured):")
+    print("    " .. table.concat(configs.linters, ", "))
+    print()
+    
+    print("📦 PLUGINS: " .. configs.plugins_count .. " total")
+    print("🌳 TREESITTER PARSERS: " .. configs.treesitter_parsers)
+    print()
+    
+    print("═══════════════════════════════════════════════════════════════")
+    print("For detailed documentation, see: CONFIGURATIONS.md")
+    print("For full list with script, run: lua list_configurations.lua")
+    print("═══════════════════════════════════════════════════════════════")
+end, { desc = "List all configurations loaded in init.lua" })
+
+-- ============================================================================
 -- END OF CONFIGURATION
 -- ============================================================================

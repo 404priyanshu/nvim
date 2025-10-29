@@ -2,6 +2,8 @@
 
 A comprehensive Neovim configuration consolidated into a single `init.lua` file.
 
+> 📋 **[View Complete Configuration List](CONFIGURATIONS.md)** - See all loaded configurations, plugins, LSP servers, formatters, linters, and more.
+
 ## Structure
 
 This configuration uses a **single-file approach** for simplicity and portability. Everything is contained in `init.lua` (~4,800 lines), organized into clear sections:
@@ -42,10 +44,21 @@ This configuration uses a **single-file approach** for simplicity and portabilit
 
 ## Quick Commands
 
-- `:Mason` - Manage LSP servers, formatters, and linters
-- `:Lazy` - Manage plugins
-- `:HealthCheck` - Run configuration health check
+### Configuration Management
+- `:ListConfigurations` - Display all loaded configurations
+- `:HealthCheck` - Run comprehensive configuration health check
 - `:MasonVerify` - Verify Mason tool management
+
+### LSP & Tools
+- `:Mason` - Manage LSP servers, formatters, and linters
+- `:LspInfo` - Show comprehensive LSP information
+- `:LspStatus` - Show brief LSP status
+
+### Plugin Management
+- `:Lazy` - Manage plugins
+- `:Lazy sync` - Update all plugins
+
+### Navigation
 - `<leader><space>` - Smart find files
 - `<leader>/` - Grep in project
 - `<leader>e` - File explorer
