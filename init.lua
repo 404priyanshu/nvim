@@ -1336,7 +1336,7 @@ do
     local lsp_inline_configs = {}
 
     -- lua-ls
-    lsp_inline_configs["lua-ls"] = return {
+    lsp_inline_configs["lsp_inline_configs["lua-ls"] = {"] = {
     cmd = { "lua-language-server" },
     filetypes = { "lua" },
     root_markers = {
@@ -1372,7 +1372,7 @@ do
 
 
     -- gopls
-    lsp_inline_configs["gopls"] = return {
+    lsp_inline_configs["lsp_inline_configs["gopls"] = {"] = {
     cmd = { 'gopls' },
     filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gosum' },
     root_markers = { 'go.mod', 'go.work', '.git' },
@@ -1485,7 +1485,7 @@ do
 
 
     -- zls
-    lsp_inline_configs["zls"] = return {
+    lsp_inline_configs["lsp_inline_configs["zls"] = {"] = {
     cmd = { "zls" },
     filetypes = { "zig", "zir" },
     root_markers = { "zls.json", "build.zig", ".git" },
@@ -1493,7 +1493,7 @@ do
 
 
     -- ts-ls
-    lsp_inline_configs["ts-ls"] = return {
+    lsp_inline_configs["lsp_inline_configs["ts-ls"] = {"] = {
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = {
         "javascript",
@@ -1530,7 +1530,7 @@ do
 
 
     -- rust-analyzer
-    lsp_inline_configs["rust-analyzer"] = return {
+    lsp_inline_configs["lsp_inline_configs["rust-analyzer"] = {"] = {
     cmd = { "rust-analyzer" },
     root_markers = { "Cargo.lock" },
     filetypes = { "rust" },
@@ -1555,7 +1555,7 @@ do
     return string.gsub(content, "%s+", "")
 end
 
-return {
+{
     cmd = { "intelephense", "--stdio" },
     filetypes = { "php", "blade" },
     root_markers = { "composer.json", ".git" },
@@ -1566,7 +1566,7 @@ return {
 
 
     -- tailwindcss
-    lsp_inline_configs["tailwindcss"] = return {
+    lsp_inline_configs["lsp_inline_configs["tailwindcss"] = {"] = {
     cmd = { "tailwindcss-language-server", "--stdio" },
     filetypes = {
         "javascript",
@@ -1631,7 +1631,7 @@ return {
 
 
     -- html-ls
-    lsp_inline_configs["html-ls"] = return {
+    lsp_inline_configs["lsp_inline_configs["html-ls"] = {"] = {
     cmd = { "vscode-html-language-server", "--stdio" },
     filetypes = {
         "html",
@@ -1646,7 +1646,7 @@ return {
 
 
     -- css-ls
-    lsp_inline_configs["css-ls"] = return {
+    lsp_inline_configs["lsp_inline_configs["css-ls"] = {"] = {
     cmd = { "vscode-css-language-server", "--stdio" },
     filetypes = { "css", "scss", "less" },
     root_markers = { "package.json", ".git" },
@@ -1677,7 +1677,7 @@ local function get_typescript_sdk()
     return nil
 end
 
-return {
+{
     cmd = { "vue-language-server", "--stdio" },
     filetypes = { "vue" },
     root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
